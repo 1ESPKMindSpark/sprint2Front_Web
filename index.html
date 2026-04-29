@@ -1,59 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Study – Jovi Camera</title>
+    <title>Jovi Camera</title>
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body>
     <div class="phone">
-
         <!-- tela 1 camera principal -->
-        <section class="tela active">
-            <div class="camera-visor">
-                <!-- span para a lista de icones no topo -->
-                <div class="camera-icones-topo">
-                    <span class="cam-icon">⊙</span>
-                    <span class="cam-icon">⚡</span>
-                    <span class="cam-icon">🚫</span>
-                    <span class="cam-icon zeiss">ZEISS</span>
-                    <span class="cam-icon">⊞</span>
-                    <span class="cam-icon">⚙</span>
+        <div class="camera-visor">
+            <!-- span para a lista de icones no topo -->
+            <div class="camera-icones-topo">
+                <span class="cam-icon">⊙</span>
+                <span class="cam-icon">⚡</span>
+                <span class="cam-icon">🚫</span>
+                <span class="cam-icon zeiss">ZEISS</span>
+                <span class="cam-icon">⊞</span>
+                <span class="cam-icon">⚙</span>
+            </div>
+            <a href="pages/intro.html" class="ss-pill">
+                🧠 Experimente o Smart Study!
+            </a>
+        </div>
 
-                </div>
+
+        <!-- zoom -->
+        <div class="zoom-bar">
+            <div class="zoom-btn">0.6</div>
+            <div class="zoom-btn active">1.0</div>
+            <div class="zoom-btn">2</div>
+        </div>
+
+
+        <!-- modos de captura -->
+        <div class="mode-tabs">
+            <span class="mode-tab">Noite</span>
+            <span class="mode-tab">Retrato</span>
+            <span class="mode-tab active-mode">Foto</span>
+            <span class="mode-tab">Vídeo</span>
+            <!-- clicando em smart study vai p introhtml -->
+            <a href="pages/intro.html" class="mode-tab ss-mode">Smart Study</a>
+        </div>
+
+
+        <!-- botao de galeria e de virar a camera -->
+        <div class="controle-captura">
+            <div class="btn-secundario">🖼</div>
+            <div class="btn-disparo">
+                <div class="btn-disparo-interno"></div>
             </div>
-            <!-- zoom -->
-            <div class="zoom-bar">
-                <div class="zoom-btn">0.6</div>
-                <div class="zoom-btn active">1.0</div>
-                <div class="zoom-btn">2</div>
-            </div>
-            <!-- modos de captura -->
-            <div class="mode-tabs">
-                <span class="mode-tab">Noite</span>
-                <span class="mode-tab">Retrato</span>
-                <span class="mode-tab active-mode">Foto</span>
-                <span class="mode-tab">Vídeo</span>
-                <span class="mode-tab ss-mode" onclick="goTo('screen-intro')">Smart Study</span>
-            </div>
-            <!-- botao de galeria e de virar a camera -->
-            <div class="controle-captura">
-                <div class="btn-secundario">🖼</div>
-                <div class="btn-disparo">
-                    <div class="btn-disparo-interno"></div>
-                </div>
-                <div class="btn-secundario">🔄</div>
-            </div>
-            <!-- navegador do android -->
-            <div class="android-nav">
-                <span class="nav-btn">☰</span>
-                <span class="nav-btn">○</span>
-                <span class="nav-btn">‹</span>
-            </div>
-        </section>
+            <div class="btn-secundario">🔄</div>
+        </div>
+
+        <!-- navegador do android -->
+        <nav class="android-nav">
+            <span class="nav-btn">☰</span>
+            <span class="nav-btn">○</span>
+            <span class="nav-btn">‹</span>
+        </nav>
     </div> <!-- div phone -->
+    <script src="src/js/script.js"></script>
 </body>
 
 </html>
