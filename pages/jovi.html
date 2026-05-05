@@ -4,20 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SS Camera</title>
+    <title>Jovi Camera</title>
     <link rel="stylesheet" href="../src/css/style.css">
 </head>
 
 <body>
     <div class="phone">
-
-
-        <header class="ss-topbar">
-            <a href="../index.html" class="intro-fechar">✕</a>
-            <div class="retangulo-azul">🧠 Smart Study!</div>
-            <div class="voltar-btn">⟳</div>
-        </header>
-
+        <!-- tela 1 camera principal -->
         <div class="camera-visor">
             <!-- span para a lista de icones no topo -->
             <div class="camera-icones-topo">
@@ -28,13 +21,9 @@
                 <span class="cam-icon">⊞</span>
                 <span class="cam-icon">⚙</span>
             </div>
-            <nav class="funcao-modos">
-                <a href="digitalizar.html" class="funcao">📄 Digitalizar Texto</a>
-                <a href="traduzir.html" class="funcao">🌐 Traduzir</a>
-                <a href="math.html" class="funcao">📐 Resolver Math</a>
-                <a href="resumir.html" class="funcao">📝 Resumir</a>
-                <a href="quiz.html" class="funcao">🎯 Quiz</a>
-            </nav>
+            <a href="../pages/intro.html" class="retangulo-azul">
+                🧠 Experimente o Smart Study!
+            </a>
         </div>
 
 
@@ -43,6 +32,17 @@
             <div class="zoom-btn">0.6</div>
             <div class="zoom-btn active">1.0</div>
             <div class="zoom-btn">2.0</div>
+        </div>
+
+
+        <!-- modos de captura -->
+        <div class="modos">
+            <span class="modo">Noite</span>
+            <span class="modo">Retrato</span>
+            <span class="modo active-mode">Foto</span>
+            <span class="modo">Vídeo</span>
+            <!-- clicando em smart study vai p introhtml -->
+            <a href="../pages/intro.html" class="modo ss-modo">Smart Study</a>
         </div>
 
 

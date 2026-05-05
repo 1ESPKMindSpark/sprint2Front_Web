@@ -1,26 +1,26 @@
-
 /* deixa as cores e font salvadas para facilitar na hora de pegar e nn precisar ficar copiando e colando*/
-:root { 
-  --black:    #000000;
-  --dark:     #0d0d0d;
-  --blue-deep:#1a1a6e;
-  --blue-grad-start: #1e1e8f;
-  --blue-grad-end:   #6b47dc;
-  --retangulo-blue:#1d1dce;
-  --white:    #ffffff;
-  --gray:     #aaaaaa;
+:root {
+    --black: #000000;
+    --dark: #0d0d0d;
+    --blue-deep: #1a1a6e;
+    --blue-grad-start: #1e1e8f;
+    --blue-grad-end: #6b47dc;
+    --retangulo-blue: #1d1dce;
+    --white: #ffffff;
+    --gray: #aaaaaa;
 
-  --orange:  #ff7a1a;
-  --green:   #00e676;
-  --purple:  #9b51e0;
-  --pink:    #e040fb;
-  --teal:    #00bcd4;
-  --yellow:  #ffd600;
+    --orange: #ff7a1a;
+    --green: #00e676;
+    --purple: #9b51e0;
+    --pink: #e040fb;
+    --teal: #00bcd4;
+    --yellow: #ffd600;
 
-  --font: sans-serif;
+    --font: sans-serif;
 }
+
 /* pagina no fundo do telefone padrao para todas */
-body{
+body {
     font-family: var(--font);
     background: #111;
     display: flex;
@@ -29,8 +29,9 @@ body{
     min-height: 100vh;
     padding: 20px 10px 40px;
 }
+
 /* o telefone padrao para todas*/
-.phone{
+.phone {
     width: 375px;
     height: 812px;
     background-color: var(--black);
@@ -39,37 +40,45 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 0 8px #222, 0 0 0 10px #333, 0 30px 80px rgba(0,0,0,.9); /*borda do telefone*/
-    flex-shrink: 0; /*mantem o tamanho, nn deixa encolher*/
+    box-shadow: 0 0 0 8px #222, 0 0 0 10px #333, 0 30px 80px rgba(0, 0, 0, .9);
+    /*borda do telefone*/
+    flex-shrink: 0;
+    /*mantem o tamanho, nn deixa encolher*/
 }
-.android-nav{
+
+.android-nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px; /*espaco entre os botoes*/
+    gap: 60px;
+    /*espaco entre os botoes*/
     padding: 19px 0 14px;
     background: var(--black);
     flex-shrink: 0;
 }
-.nav1-btn{
+
+.nav1-btn {
     color: var(--white);
     font-size: 14px;
     opacity: .6;
     cursor: pointer;
 }
+
 /* separei os botoes porque o primeiro estava ficando maior */
-.nav2-btn{
+.nav2-btn {
     color: var(--white);
     font-size: 25px;
     opacity: .6;
     cursor: pointer;
 }
-.nav3-btn{
+
+.nav3-btn {
     color: var(--white);
     font-size: 25px;
     opacity: .6;
     cursor: pointer;
 }
+
 
 
 
@@ -80,42 +89,55 @@ body{
 
 
 /* estilo index */
-.camera-visor{
+.camera-visor {
     flex: 1;
     background: #0a0a0a;
     position: relative;
     overflow: hidden;
     display: flex;
-    flex-direction: column; /*organiza em coluna*/
-    justify-content: flex-end; /*jjoga conteudo p baixo*/
+    flex-direction: column;
+    /*organiza em coluna*/
+    justify-content: flex-end;
+    /*jjoga conteudo p baixo*/
 }
-.camera-icones-topo{
+
+.camera-icones-topo {
     display: flex;
-    justify-content: space-between; /* espaco entre os icone*/
+    justify-content: space-between;
+    /* espaco entre os icone*/
     align-items: center;
-    padding: 40px 27px 10px; /*espacamento */
+    padding: 40px 27px 10px;
+    /*espacamento */
     position: absolute;
-    top: 0; left: 0; right: 0;
-    z-index: 10; /*fica acima dos outros elementos*/
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    /*fica acima dos outros elementos*/
 }
-.cam-icon{
+
+.cam-icon {
     color: var(--white);
     font-size: 20px;
     cursor: pointer;
     opacity: .85;
 }
-.cam-icon.zeiss{
+
+.cam-icon.zeiss {
     color: var(--yellow);
     font-size: 13px;
-    font-weight: 800; /*negrito*/
+    font-weight: 800;
+    /*negrito*/
     letter-spacing: 1px;
 }
+
 /* botao smart study de cima */
-.retangulo-azul{
+.retangulo-azul {
     position: absolute;
     top: 90px;
     left: 50%;
-    transform: translateX(-50%); /*centralizar*/
+    transform: translateX(-50%);
+    /*centralizar*/
     background: linear-gradient(160deg, #020250 0%, #2800a9 100%);
     color: var(--white);
     font-size: 13px;
@@ -124,92 +146,118 @@ body{
     border-radius: 30px;
     display: flex;
     align-items: center;
-    gap: 7px; /*espaco entre o icone e o texto*/
+    gap: 7px;
+    /*espaco entre o icone e o texto*/
     cursor: pointer;
     z-index: 10;
-    white-space: nowrap; /*deixa o texto em uma linha, sem quebrar ele*/
-    text-decoration: none; /*remove a linha debaixo do texto*/
+    white-space: nowrap;
+    /*deixa o texto em uma linha, sem quebrar ele*/
+    text-decoration: none;
+    /*remove a linha debaixo do texto*/
     animation: pulse-retangulo 2.5s ease-in-out infinite;
-    
+
 }
+
 /* animacao com efeito de pulse */
 @keyframes pulse-retangulo {
-    0%,100% { box-shadow: 0 0 0 0 rgba(59,59,255,.5); }
-    50%      { box-shadow: 0 0 0 10px rgba(59,59,255,0); }
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 59, 255, .5);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(59, 59, 255, 0);
+    }
 }
-.zoom-bar{
+
+.zoom-bar {
     display: flex;
     gap: 1px;
     justify-content: center;
     padding: 8px 0;
     flex-shrink: 0;
 }
-.zoom-btn{
+
+.zoom-btn {
     color: var(--white);
     font-size: 13px;
     font-weight: 700;
-    background: rgba(255,255,255,.12); /*cria efeito leve etransparente se mistura cm o fundo*/
+    background: rgba(255, 255, 255, .12);
+    /*cria efeito leve etransparente se mistura cm o fundo*/
     border-radius: 20px;
     padding: 5px 20px;
     cursor: pointer;
 }
-.zoom-btn.active { background: rgba(255,255,255,.25); color: var(--yellow); } /* deixa o que esta sendo utilizado amarelo*/
 
-.modos{
+.zoom-btn.active {
+    background: rgba(255, 255, 255, .25);
+    color: var(--yellow);
+}
+
+/* deixa o que esta sendo utilizado amarelo*/
+
+.modos {
     display: flex;
     justify-content: center;
     gap: 18px;
     padding: 8px 0 6px;
     flex-shrink: 0;
 }
-.modo{
+
+.modo {
     color: var(--gray);
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
 }
+
 /* foto */
-.modo.active-mode{ 
-    color: var(--yellow); 
-}
-/* smart study */
-.modo.ss-modo{ 
-    color: var(--retangulo-blue); 
-    font-weight: 800; 
+.modo.active-mode {
+    color: var(--yellow);
 }
 
-.controle-captura{
+/* smart study */
+.modo.ss-modo {
+    color: var(--retangulo-blue);
+    font-weight: 800;
+}
+
+.controle-captura {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 36px 16px;
     flex-shrink: 0;
 }
-.btn-secundario1{
+
+.btn-secundario1 {
     color: var(--white);
-    width: 44px; 
+    width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, .08);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-size: 25px;
 }
-.btn-secundario2{
-    width: 44px; 
+
+.btn-secundario2 {
+    width: 44px;
     height: 44px;
     border-radius: 12px;
-    background: rgba(255,255,255,.08);
+    background: rgba(255, 255, 255, .08);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     font-size: 22px;
 }
-.btn-disparo{
+
+.btn-disparo {
     width: 48px;
     height: 48px;
     border-radius: 50%;
@@ -219,13 +267,18 @@ body{
     justify-content: center;
     cursor: pointer;
 }
-.btn-disparo-interno{
+
+.btn-disparo-interno {
     width: 54px;
     height: 54px;
     border-radius: 50%;
     background: var(--white);
     opacity: .15;
 }
+
+
+
+
 
 
 
@@ -239,45 +292,45 @@ body{
     height: 812px;
     background-color: var(--black);
     border-radius: 44px;
-    overflow: hidden; /*corta oq vaza , faz respeitar as bordas arredondadas*/
+    overflow: hidden;
+    /*corta oq vaza , faz respeitar as bordas arredondadas*/
     position: relative;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 0 8px #222, 0 0 0 10px #333, 0 30px 80px rgba(0,0,0,.9); /*borda do telefone*/
-    flex-shrink: 0; 
+    box-shadow: 0 0 0 8px #222, 0 0 0 10px #333, 0 30px 80px rgba(0, 0, 0, .9);
+    /*borda do telefone*/
+    flex-shrink: 0;
 }
-.intro-fechar{
+
+.intro-fechar {
     position: absolute;
     top: 16px;
+    z-index: 100;
     left: 16px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background: rgba(255,255,255,.15);
+    background: rgba(255, 255, 255, .15);
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     color: var(--white);
     font-size: 10px;
-    z-index: 10;
-    flex-shrink: 0;
+
 }
-/* .intro-rolagem{
-    flex: 1;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column; 
-} */
-.intro-body{
+
+
+.intro-body {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 60px 28px 20px;
+    padding: 80px 28px 20px;
     gap: 14px;
 }
-.intro-icone{
+
+.intro-icone {
     width: 86px;
     height: 86px;
     border-radius: 22px;
@@ -288,30 +341,36 @@ body{
     font-size: 44px;
     margin-bottom: 2px;
 }
-.intro-titulo{
+
+.intro-titulo {
     color: var(--white);
     font-size: 26px;
     font-weight: 800;
     text-align: center;
     margin-top: -1px;
 }
-.intro-subtitulo{
+
+.intro-subtitulo {
     color: var(--gray);
     font-size: 14px;
     text-align: center;
     margin-top: -17px;
 }
-.card-sobre{
+
+.card-sobre {
     width: 100%;
-    background: rgba(255,255,255,.12);
+    background: rgba(255, 255, 255, .12);
     border-radius: 20px;
-    padding: 14px 16px;
+    padding: 10px 9px;
     display: flex;
     align-items: flex-start;
     gap: 14px;
-    backdrop-filter: blur(6px); /*desfoque, efeito vidro*/
+    backdrop-filter: blur(6px);
+    /*desfoque, efeito vidro*/
+
 }
-.sobre-icone{
+
+.sobre-icone {
     width: 54px;
     height: 54px;
     border-radius: 12px;
@@ -321,33 +380,39 @@ body{
     font-size: 22px;
     flex-shrink: 0;
 }
+
 /* cores dos quadrados que contem os emojis */
-.icone-azul   { 
-    background: linear-gradient(135deg,#3b82f6,#1d4ed8);
-    margin-top: 17px;
- }
-.icone-rosa { 
-    background: linear-gradient(135deg,#ec4899,#9333ea); 
-    margin-top: 17px;
-}
-.icone-laranja { 
-    background: linear-gradient(135deg,#f97316,#ef4444); 
+.icone-azul {
+    background: linear-gradient(135deg, #1e5cc1, #172e6f);
     margin-top: 17px;
 }
 
-.sobre-texto h4 { 
-    color: var(--white); 
-    font-size: 18px; 
-    font-weight: 800; 
+.icone-rosa {
+    background: linear-gradient(135deg, #ec4899, #9333ea);
+    margin-top: 17px;
+}
+
+.icone-laranja {
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    margin-top: 17px;
+}
+
+.sobre-texto h4 {
+    color: var(--white);
+    font-size: 18px;
+    font-weight: 800;
     margin-top: 10px;
 }
-.sobre-texto p  { 
-    color: rgba(255,255,255,.7); 
-    font-size: 12px; 
-    line-height: 1.4; /*espacamento entre as linhas*/
-    margin-top: -20px; 
+
+.sobre-texto p {
+    color: rgba(255, 255, 255, .7);
+    font-size: 12px;
+    line-height: 1.4;
+    /*espacamento entre as linhas*/
+    margin-top: -20px;
 }
-.btn-iniciar{
+
+.btn-iniciar {
     display: block;
     width: 100%;
     background: var(--white);
@@ -358,12 +423,60 @@ body{
     border-radius: 20px;
     padding: 16px;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: 29px;
     text-align: center;
     text-decoration: none;
 }
-.intro-aviso{
-    color: rgba(255,255,255,.5);
+
+.intro-aviso {
+    color: rgba(255, 255, 255, .5);
     font-size: 11px;
     text-align: center;
+}
+
+.voltar-btn {
+    position: absolute;
+    top: 16px;
+    z-index: 100;
+    right: 16px;
+    /* lado direito */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--white);
+    font-size: 10px;
+}
+
+.funcao-modos {
+    display: flex;
+    top: 120px;
+    gap: 6px;
+    padding: 0 12px 10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex-shrink: 0;
+}
+
+
+.funcao {
+    display: flex;
+    top: 120px;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--white);
+    background: rgba(255, 255, 255, .1);
+    border: 1.5px solid transparent;
+    text-decoration: none;
+    flex-shrink: 0;
 }

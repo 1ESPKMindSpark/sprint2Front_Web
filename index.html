@@ -1,68 +1,83 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jovi Camera</title>
-    <link rel="stylesheet" href="src/css/style.css">
+    <title>jovi smart study</title>
+    <link rel="stylesheet" href="src/css/index.css">
 </head>
 
 <body>
-    <div class="phone">
-        <!-- tela 1 camera principal -->
-        <div class="camera-visor">
-            <!-- span para a lista de icones no topo -->
-            <div class="camera-icones-topo">
-                <span class="cam-icon">⊙</span>
-                <span class="cam-icon">⚡</span>
-                <span class="cam-icon">🚫</span>
-                <span class="cam-icon zeiss">ZEISS</span>
-                <span class="cam-icon">⊞</span>
-                <span class="cam-icon">⚙</span>
+    <!-- navegacao da pagina da parte superior -->
+    <header>
+        <div class="conjunto-header">
+            <h1 class="logo">JOVI <span>Smart Study</span></h1>
+            <nav> <!-- menu de navegacao -->
+                <ul class="menu-index">
+                    <li><a href="#">Funcionalidades</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Modos</a></li>
+                    <li><a href="pages/jovi.html" class="btn-testar">Quero testar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero-conteudo">
+                <p class="hero-novo">Novo na câmera Jovi</p>
+                <h2>Estude mais inteligente.<br>Com a sua câmera.</h2>
+                <p class="hero-testo">O Smart Study é a IA integrada à câmera Jovi que digitaliza, traduz,<br> resume e gera quizzes a partir de qualquer texto em tempo real, direto pelo seu celular.</p>
+                <div class="hero-botoes">
+                    <a href="#contato" class="btn-aviso">Ser avisado no lançamento</a>
+
+                </div>
             </div>
-            <a href="pages/intro.html" class="retangulo-azul">
-                🧠 Experimente o Smart Study!
-            </a>
-        </div>
-
-
-        <!-- zoom -->
-        <div class="zoom-bar">
-            <div class="zoom-btn">0.6</div>
-            <div class="zoom-btn active">1.0</div>
-            <div class="zoom-btn">2.0</div>
-        </div>
-
-
-        <!-- modos de captura -->
-        <div class="modos">
-            <span class="modo">Noite</span>
-            <span class="modo">Retrato</span>
-            <span class="modo active-mode">Foto</span>
-            <span class="modo">Vídeo</span>
-            <!-- clicando em smart study vai p introhtml -->
-            <a href="pages/intro.html" class="modo ss-modo">Smart Study</a>
-        </div>
-
-
-        <!-- botao de galeria e de virar a camera -->
-        <div class="controle-captura">
-            <div class="btn-secundario1">🖼</div>
-            <div class="btn-disparo">
-                <div class="btn-disparo-interno"></div>
+            <div class="hero-foto">
+                <img src="" alt="smart-study">
             </div>
-            <div class="btn-secundario2">🔄</div>
-        </div>
+        </section>
 
-        <!-- navegador do android -->
-        <nav class="android-nav">
-            <span class="nav1-btn">☰</span>
-            <span class="nav2-btn">○</span>
-            <span class="nav3-btn">‹</span>
-        </nav>
-    </div> <!-- div phone -->
-    <script src="src/js/script.js"></script>
+        <section class="funcionalidades">
+            <h2>Funcionalidades</h2>
+            <p class="testo-funcionalidades">Cinco modos inteligentes direto na sua câmera.</p>
+            <div class="cards">
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">📄</span>
+                    <h3>digitalizar texto</h3>
+                    <p>extrai texto de livros, cadersnos e apostilas com ocr de alta precisao</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">🌐</span>
+                    <h3>traduzir</h3>
+                    <p>aponte para qualquer texto em outro idioma e receba a traducao na hora</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">📝</span>
+                    <h3>resumir</h3>
+                    <p>a ia gera resumos inteligentes destacando os pontos principais do conteudo</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">🎯</span>
+                    <h3>quiz</h3>
+                    <p>transforma qualquer texto em perguntas para fixar o conteudo</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">📐</span>
+                    <h3>resolver math</h3>
+                    <p>fotografe equacoes e receba a solucao passo a passo explicada para ia</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
 </body>
 
 </html>
