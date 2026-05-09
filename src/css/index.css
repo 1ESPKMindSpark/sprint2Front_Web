@@ -1,4 +1,4 @@
-/* --- ESTILOS GERAIS --- */
+
 /* deixa as cores e font salvadas para facilitar na hora de pegar e nn precisar ficar copiando e colando*/
 :root {
     /* Variáveis de cores para usar no projeto todo */
@@ -203,7 +203,7 @@ body {
 
 /* Bloco da imagem da seção hero */
 .hero-foto {
-    flex: 1;
+
     display: flex;
     justify-content: center;
     align-items: center;
