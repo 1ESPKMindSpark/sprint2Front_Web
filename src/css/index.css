@@ -1,22 +1,18 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
+/* --- ESTILOS GERAIS --- */
 /* deixa as cores e font salvadas para facilitar na hora de pegar e nn precisar ficar copiando e colando*/
 :root {
+    /* Variáveis de cores para usar no projeto todo */
     --black: #000000;
-    --gray2: #1c1c1c;
+    --body: #07070a;
     --dark: #131313;
     --blue-deep: #1a1a6e;
     --blue-grad-start: #1e1e8f;
     --blue-grad-end: #6b47dc;
-    --grad-text: linear-gradient(90deg, #4F8EF7, #8B5CF6, #EC4899);
+    --grad-text: linear-gradient(90deg, #00bcd4, #2b68d1, #1a1a6e);
     --retangulo-blue: #1d1dce;
     --white: #ffffff;
-    --gray: #eae1e1;
+    --gray: #939393;
+    --azul: #2b68d1;
 
     --orange: #ff7a1a;
     --green: #00e676;
@@ -24,31 +20,30 @@
     --pink: #e040fb;
     --teal: #00bcd4;
     --yellow: #ffd600;
+
+    /* Tempo da animação de transição */
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     --font: sans-serif;
 }
 
-body {
-    font-family: var(--font);
-    background: var(--dark);
-    color: var(--white);
-    line-height: 1.6;
-}
-
+/* Configuração do topo do site */
 header {
     position: fixed;
+    /* Fixa o menu no topo mesmo ao rolar */
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 15, 0.85);
+    background: rgba(9, 9, 14, 0.85);
     backdrop-filter: blur(12px);
+    /* Efeito de desfoque no fundo */
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     z-index: 100;
     padding: 0 40px;
     justify-content: space-between;
 }
 
+/* Container do conteúdo dentro do header */
 .conjunto-header {
     display: flex;
     justify-content: space-between;
@@ -58,134 +53,533 @@ header {
     height: 100px;
 }
 
+/* Estilo do texto da logo */
 .logo {
     font-family: var(--font);
     font-size: 2rem;
     font-weight: 900;
-    color: var(--grad-text);
-    text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    color: var(--white);
 }
 
+/* Parte específica da logo com degradê */
 .logo span {
-
     background: var(--grad-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+
 }
 
+/* Alinhamento dos itens do menu */
 .menu-index {
     display: flex;
-    gap: 32px;
+    gap: 50px;
     list-style: none;
     align-items: center;
+
 }
 
+/* Links dentro do menu */
 .menu-index a {
-    color: var(--white);
+    color: var(--gray);
     text-decoration: none;
     font-size: 20px;
     transition: color 0.2s;
 }
 
-.menu a:hover {
+.menu-index a:hover {
     color: var(--white);
 }
 
+/* Botão de destaque do menu */
 .btn-testar {
     display: inline-block;
-    background: var(--grad-text);
-    color: var(--white);
+    background: var(--azul) !important;
+    color: var(--white) !important;
     padding: 8px 20px;
     border-radius: 50px;
     font-weight: 500;
 }
 
+
+.brain-image {
+    width: 100%;
+    max-width: 500px;
+    /* Ajuste o tamanho aqui */
+    height: auto;
+    /* ANIMAÇÃO: Faz o cérebro flutuar suavemente */
+    animation: float 6s ease-in-out infinite;
+    /* EFEITO DE BRILHO EXTRA */
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+}
+
+/* Código da animação de flutuar */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+#particles-js {
+    position: absolute;
+    right: -900px;
+    width: 50%;
+    /* Metade da tela */
+    height: 800px;
+    top: 20;
+    right: 0;
+    /* Lado direito */
+    z-index: 1;
+    background-color: transparent;
+}
+
+
+/* --- CONFIGURAÇÕES DO CORPO --- */
+body {
+    background-color: var(--body);
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* Reset básico para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- SEÇÃO HERO (O INÍCIO DO CONTEÚDO) --- */
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
     max-width: 1200px;
-    /*largura maxima*/
     margin: 0 auto;
-    /*centraliza horizontalmente*/
-    padding: 10px 40px 80px;
+    padding: 100px 40px;
     min-height: 100vh;
-    /*altura minima 100% da tela*/
 }
 
+/* Bloco de texto da seção hero */
 .hero-conteudo {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
     flex: 1;
     max-width: 560px;
-    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.hero-foto {}
+/* Selo de "Novo" ou categoria */
+.hero-novo {
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
-.funcionalidades {
-    background: var(--gray2);
+.hero h2 {
+    text-align: left;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero-testo {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+/* Bloco da imagem da seção hero */
+.hero-foto {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-foto img {
     max-width: 100%;
-    padding: 80px 40px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(79, 142, 247, 0.2));
 }
 
-.funcionalidades>* {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
+/* --- BOTÃO DE CHAMADA --- */
+.btn-aviso {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 15px 32px;
+    background-color: var(--azul) !important;
+    color: var(--white) !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
+.btn-aviso:hover {
+    background-color: #204175 !important;
+    transform: translateY(-2px);
+}
+
+h2 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* --- FUNCIONALIDADES --- */
+.funcionalidades {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Particles ficam atrás do conteúdo */
+    position: relative;
+    overflow: hidden;
+}
+
+#particles-func {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 280%;
+    height: 800px;
+    z-index: 0;
+}
+/* deixa tudo na frente da animacao azul */
+.texto-funcionalidades,
+.cards {
+    position: relative;
+    z-index: 1;
+}
 
 .texto-funcionalidades {
-    max-width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 40px;
-
-
+    font-size: 1.15rem;
+    color: var(--gray);
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 48px;
 }
 
+/* Grid para os cards de funcionalidade */
 .cards {
     display: flex;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
-    flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 0 auto;
+
 }
 
 .card {
-    flex: 1;
-    min-width: 200px;
-    background: var(--gray);
-    border: 3px solid var(--pink);
-    border-radius: 10%;
-    padding: 28px 24px;
-    transition: border-color 0.2s, transform 0.2s;
+    background: #21262d;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
 }
 
 .card:hover {
-    border-color: rgba(98, 150, 241, 0.3);
+    border-color: #4f8ef7;
     transform: translateY(-3px);
 }
 
-.card-icone {
-    font-size: 28px;
-    display: block;
-    margin-bottom: 14px;
+.card-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
 }
 
 .card h3 {
-    color: var(--black);
-    font-size: 16px;
-    font-weight: 600;
-    margin-bottom: 10px;
+    color: var(--azul);
+    font-size: 1.1rem;
+    text-transform: capitalize;
 }
 
 .card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+
+
+/* --- como funciona --- */
+.como-funciona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Particles ficam atrás do conteúdo */
+    position: relative;
+    overflow: hidden;
+}
+#particles-como {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    width: 280%;
+    height: 800px;
+    z-index: 0;
+}
+/* deixa tudo na frente da animacao azul */
+.como-funciona-texto,
+.passos {
+    position: relative;
+    z-index: 1;
+}
+
+.como-funciona-texto {
+    font-size: 1.15rem;
+    color: var(--gray);
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+
+}
+
+.passos {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.passo {
+    background: #21262d;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+.passo:hover {
+    border-color: #4f8ef7;
+    transform: translateY(-3px);
+}
+
+.passo-num {
+    font-size: 42px;
+    font-weight: 800;
+    background: var(--azul);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.passo h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.passo p {
     font-size: 13px;
-    color: var(--black);
-    line-height: 1.6;
+    color: var(--gray);
+}
+
+
+
+/* --- CONTATO --- */
+#contato {
+    padding: 70px 20px;
+    text-align: center;
+    background: #264e94;
+    border-top: 1px solid #30363d;
+}
+
+#contato h2 {
+    color: #0d1117;
+}
+
+#contato p {
+    color: #0d1117;
+    max-width: 600px;
+    margin: 0 auto 28px;
+}
+
+/* Botão que abre a lista de desenvolvedores */
+#abrirdevs {
+    padding: 12px 36px;
+    border-radius: 50px;
+    border: none;
+    background: #0d1117;
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+#abrirdevs:hover {
+    opacity: 0.85;
+}
+
+/* --- OVERLAY E MODAL --- */
+.janela-modal {
+    display: none;
+    /* Escondido até o JS ser acionado */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa branca/escura interna do modal */
+.conteudo-modal {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.conteudo-modal h2 {
+    color: var(--white);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.lista-devs p {
+    color: var(--gray);
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Botão de fechar do modal */
+.btn-fechar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Classe controlada pelo JavaScript para mostrar o modal */
+.janela-modal.visivel {
+    display: flex;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #010409;
+    color: var(--white);
+    padding: 50px 20px 20px;
+    border-top: 1px solid #30363d;
+}
+
+/* Alinhamento dos blocos de informação no rodapé */
+.footerconteudo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info h3 {
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.info h3 span {
+    color: var(--azul);
+}
+
+.info p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+.footer-links h4,
+.redes h4 {
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: var(--azul);
+}
+
+.redes span {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+/* Linha de direitos autorais no final de tudo */
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #30363d;
+    padding-top: 20px;
+    font-size: 0.78rem;
+    color: var(--gray);
+}
+
+/* Links das redes sociais no rodapé */
+.redes a {
+    text-decoration: none;
+    color: var(--gray);
+    transition: 0.3s;
+}
+
+/* Efeito de destaque nas redes sociais */
+.redes a:hover {
+    color: var(--azul) !important;
+}
+
+.redes a:hover span {
+    color: var(--azul);
 }

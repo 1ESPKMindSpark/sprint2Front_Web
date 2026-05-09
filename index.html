@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jovi smart study</title>
+    <!-- Linkando o arquivo CSS que a gente estilizou -->
     <link rel="stylesheet" href="src/css/index.css">
 </head>
 
@@ -13,71 +14,273 @@
     <header>
         <div class="conjunto-header">
             <h1 class="logo">JOVI <span>Smart Study</span></h1>
-            <nav> <!-- menu de navegacao -->
+            <nav> <!-- Links de navegação ancorados (levam para partes da mesma página) -->
                 <ul class="menu-index">
-                    <li><a href="#">Funcionalidades</a></li>
-                    <li><a href="#">Como Funciona</a></li>
-                    <li><a href="#">Modos</a></li>
+                    <li><a href="#hero">Sobre</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#como funciona">Como funciona</a></li>
+                    <li><a href="#contato">Contato</a></li>
                     <li><a href="pages/jovi.html" class="btn-testar">Quero testar</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <!-- hero -->
-        <section class="hero">
+        <!-- Seção de destaque (Hero) com texto e imagem principal -->
+        <section class="hero" id="hero">
             <div class="hero-conteudo">
                 <p class="hero-novo">Novo na câmera Jovi</p>
                 <h2>Estude mais inteligente.<br>Com a sua câmera.</h2>
-                <p class="hero-testo">O Smart Study é a IA integrada à câmera Jovi que digitaliza, traduz,<br> resume e gera quizzes a partir de qualquer texto em tempo real, direto pelo seu celular.</p>
+                <p class="hero-testo">O JOVI Smart Study é uma solução inovadora que une Inteligência
+                    Artificial e visão computacional para transformar a rotina acadêmica.
+                    Desenvolvido para atuar como um assistente inteligente, otimizando o tempo de
+                    aprendizado.</p>
                 <div class="hero-botoes">
                     <a href="#contato" class="btn-aviso">Ser avisado no lançamento</a>
 
                 </div>
             </div>
             <div class="hero-foto">
-                <img src="" alt="smart-study">
+                <!-- Onde as partículas vão aparecer -->
+                <div id="particles-js"></div>
+
+
+
+                <img src="./src/assets/ai_brain_neural.png" alt="IA Brain" class="brain-image">
+
+            </div>
+        </section>
+        <!-- Grade de funcionalidades com os cards explicativos -->
+
+        <section class="funcionalidades" id="funcionalidades">
+
+            <div id="particles-func"></div>
+
+
+            <h2>Funcionalidades</h2>
+            <p class="texto-funcionalidades">O Smart Study transforma sua câmera numa ferramenta de estudo completa<br>
+                digitaliza, traduz, resume, cria quizzes e resolve equações em segundos.</p>
+            <div class="cards">
+
+                <!-- Card 1: OCR -->
+                <div class="card">
+                    <div class="card-cabecalho">
+                        <img src="./src/assets/digitalizar.png" alt="icone" class="icon">
+                        <h3>digitalizar texto</h3>
+                    </div>
+                    <p>extrai texto de livros, cadernos e apostilas com ocr de alta precisão.</p>
+                </div>
+
+
+                <!-- Card 2: Tradução -->
+                <div class="card">
+                    <div class="card-cabecalho">
+                        <img src="./src/assets/traduzir.png" alt="icone" class="icon">
+                        <h3>traduzir</h3>
+                    </div>
+                    <p>aponte para qualquer texto em outro idioma e receba a tradução na hora.</p>
+                </div>
+
+                <!-- Card 3: IA para resumir -->
+                <div class="card">
+                    <div class="card-cabecalho">
+                        <img src="./src/assets/resumir.png" alt="icone" class="icon">
+                        <h3>resumir</h3>
+                    </div>
+                    <p>a ia gera resumos inteligentes destacando os pontos principais.</p>
+                </div>
+
+
+                <!-- Card 4: Quiz -->
+                <div class="card">
+                    <div class="card-cabecalho">
+                        <img src="./src/assets/quiz.png" alt="icone" class="icon">
+                        <h3>quiz</h3>
+                    </div>
+                    <p>transforma qualquer texto em perguntas para fixar o conteúdo.</p>
+                </div>
+
+
+                <!-- Card 5: Matemática (ocupa espaço diferente no CSS) -->
+                <div class="card">
+                    <div class="card-cabecalho">
+                        <img src="./src/assets/math.png" alt="icone" class="icon">
+                        <h3>resolver math</h3>
+                    </div>
+                    <p>fotografe equações e receba a solução passo a passo explicada.</p>
+                </div>
+
+
+            </div>
+        </section>
+        <section class="como-funciona" id="como funciona">
+            <div id="particles-como"></div>
+            <h2>Como Funciona</h2>
+            <p class="como-funciona-texto">Três passos. Zero complicação.</p>
+            <div class="passos">
+                <div class="passo">
+                    <span class="passo-num">01</span>
+                    <h3>Abra a câmera</h3>
+                    <p>Toque em "Smart Study" na barra de modos da câmera Jovi.</p>
+                </div>
+                <div class="passo">
+                    <span class="passo-num">02</span>
+                    <h3>Escolha o modo</h3>
+                    <p>Selecione entre Digitalizar, Traduzir, Resumir, Quiz ou Resolver Math.</p>
+                </div>
+                <div class="passo">
+                    <span class="passo-num">03</span>
+                    <h3>Aponte e capture</h3>
+                    <p>Posicione o texto na moldura e pressione o botão. A IA processa em segundos.</p>
+                </div>
             </div>
         </section>
 
-        <section class="funcionalidades">
-            <h2>Funcionalidades</h2>
-            <p class="texto-funcionalidades">Cinco modos inteligentes direto na sua câmera.</p>
-            <div class="cards">
-                <div class="card">
-                    <!-- span para os icones -->
-                    <span class="card-icone">📄</span>
-                    <h3>digitalizar texto</h3>
-                    <p>extrai texto de livros, cadersnos e apostilas com ocr de alta precisao</p>
-                </div>
-                <div class="card">
-                    <!-- span para os icones -->
-                    <span class="card-icone">🌐</span>
-                    <h3>traduzir</h3>
-                    <p>aponte para qualquer texto em outro idioma e receba a traducao na hora</p>
-                </div>
-                <div class="card">
-                    <!-- span para os icones -->
-                    <span class="card-icone">📝</span>
-                    <h3>resumir</h3>
-                    <p>a ia gera resumos inteligentes destacando os pontos principais do conteudo</p>
-                </div>
-                <div class="card">
-                    <!-- span para os icones -->
-                    <span class="card-icone">🎯</span>
-                    <h3>quiz</h3>
-                    <p>transforma qualquer texto em perguntas para fixar o conteudo</p>
-                </div>
-                <div class="card">
-                    <!-- span para os icones -->
-                    <span class="card-icone">📐</span>
-                    <h3>resolver math</h3>
-                    <p>fotografe equacoes e receba a solucao passo a passo explicada para ia</p>
+
+        <!-- Seção final com o botão que chama o Modal via JS -->
+        <section id="contato">
+            <div class="contato-container">
+                <h2>Contate-nos para saber mais</h2>
+                <p>Estamos em constante evolução. O <strong>JOVI Smart Study</strong> é um projeto desenvolvido por
+                    estudantes apaixonados por tecnologia e inovação acadêmica. Tem alguma sugestão, crítica ou gostaria
+                    de colaborar? Nossa equipe de desenvolvedores está pronta para ouvir você.</p>
+                <button id="abrirdevs">contato</button>
+            </div>
+        </section>
+
+        <!-- Modal dos devs: começa invisível no CSS e aparece ao clicar no botão -->
+        <section id="modalDevs" class="janela-modal">
+            <div class="conteudo-modal">
+                <!-- Botão de fechar (X) -->
+                <button id="fecharDevs" class="btn-fechar">&times;</button>
+                <h2>Desenvolvedores</h2>
+                <div class="lista-devs">
+                    <p>Ana Giazzi | anagazzio@smartStudy.com | RM: 569846 </p>
+                    <p>Erick | erick@smartStudy.com | RM: 574064 </p>
+                    <p>Giulia Stella | giuliastella@smartStudy.com | RM: 568888 </p>
+                    <p>Julia Lopes | juliacamelo@smartStudy.com | RM: 574139</p>
+                    <p>Rafael | rafael@smartStudy.com | RM: 570738 </p>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        <div class="footerconteudo">
+            <div class="info">
+                <h3>JOVI <span>Smart Study</span></h3>
+                <p>Transformando seus estudos com inteligência artificial</p>
+            </div>
+            <div class="footer-links">
+                <h4>Links</h4>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                </ul>
+            </div>
+            <div class="redes">
+                <h4>Acompanhe nosso repositório</h4>
+                <a href="https://github.com/GiuliaStella/sprint2Front#" target="_blank">
+                    <span>Github: SmartStudy</span>
+                </a>
+            </div>
+        </div>
+        <!-- Rodapé simples com ano e copyright -->
+        <p class="copyright">© 2026 JOVI Smart Study. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Biblioteca oficial -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#2b68d1" }, /* Cor azul da IA */
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.5, "random": false },
+                "size": { "value": 4, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 100,
+                    "color": "#2b68d1",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, /* Conecta ao passar o mouse */
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <script>
+        particlesJS("particles-func", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#2b68d1" }, /* Cor azul da IA */
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.1, "random": false },
+                "size": { "value": 4, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 10,
+                    "color": "#2b68d1",
+                    "opacity": 0.01,
+                    "width": 1
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, /* Conecta ao passar o mouse */
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
+            },
+            "retina_detect": true
+        });
+    </script>
+        <script>
+        particlesJS("particles-como", {
+            "particles": {
+                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "color": { "value": "#2b68d1" }, /* Cor azul da IA */
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.1, "random": false },
+                "size": { "value": 4, "random": true },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 10,
+                    "color": "#2b68d1",
+                    "opacity": 0.01,
+                    "width": 1
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, /* Conecta ao passar o mouse */
+                    "onclick": { "enable": true, "mode": "push" }
+                },
+                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
+            },
+            "retina_detect": true
+        });
+    </script>
+
+
+
+
+    <!-- Importante: Chamando o script no final para garantir que o HTML carregue primeiro -->
+    <script src="./src/js/janelamodal.js"></script>
 </body>
 
 </html>
