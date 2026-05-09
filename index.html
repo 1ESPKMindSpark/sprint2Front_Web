@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jovi smart study</title>
+    <link rel="stylesheet" href="src/css/index.css">
+</head>
+
+<body>
+    <!-- navegacao da pagina da parte superior -->
+    <header>
+        <div class="conjunto-header">
+            <h1 class="logo">JOVI <span>Smart Study</span></h1>
+            <nav> <!-- menu de navegacao -->
+                <ul class="menu-index">
+                    <li><a href="#">Funcionalidades</a></li>
+                    <li><a href="#">Como Funciona</a></li>
+                    <li><a href="#">Modos</a></li>
+                    <li><a href="pages/jovi.html" class="btn-testar">Quero testar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- hero -->
+        <section class="hero">
+            <div class="hero-conteudo">
+                <p class="hero-novo">Novo na câmera Jovi</p>
+                <h2>Estude mais inteligente.<br>Com a sua câmera.</h2>
+                <p class="hero-testo">O Smart Study é a IA integrada à câmera Jovi que digitaliza, traduz,<br> resume e gera quizzes a partir de qualquer texto em tempo real, direto pelo seu celular.</p>
+                <div class="hero-botoes">
+                    <a href="#contato" class="btn-aviso">Ser avisado no lançamento</a>
+
+                </div>
+            </div>
+            <div class="hero-foto">
+                <img src="" alt="smart-study">
+            </div>
+        </section>
+
+        <section class="funcionalidades">
+            <h2>Funcionalidades</h2>
+            <p class="texto-funcionalidades">Cinco modos inteligentes direto na sua câmera.</p>
+            <div class="cards">
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">📄</span>
+                    <h3>digitalizar texto</h3>
+                    <p>extrai texto de livros, cadersnos e apostilas com ocr de alta precisao</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">🌐</span>
+                    <h3>traduzir</h3>
+                    <p>aponte para qualquer texto em outro idioma e receba a traducao na hora</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">📝</span>
+                    <h3>resumir</h3>
+                    <p>a ia gera resumos inteligentes destacando os pontos principais do conteudo</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">🎯</span>
+                    <h3>quiz</h3>
+                    <p>transforma qualquer texto em perguntas para fixar o conteudo</p>
+                </div>
+                <div class="card">
+                    <!-- span para os icones -->
+                    <span class="card-icone">📐</span>
+                    <h3>resolver math</h3>
+                    <p>fotografe equacoes e receba a solucao passo a passo explicada para ia</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Box de Cadastro -->
+        <section class="registration-box">
+            <h2>Cadastro de Usuário</h2>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sobrenome">Sobrenome:</label>
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder= "seuemail@provedor.com" required>
+                </div>
+                 <!-- botao que envia o formulario -->
+                <button type="submit" class="btn-submit">Iniciar Cadastro</button>
+            </form>
+        </section>
+    </main>
+    <!-- importa o arquivo de java script, colocado no final do body -->
+    <script src="src/js/script.js"></script>
+</body>
+</html>
+</body>
+
+</html>
