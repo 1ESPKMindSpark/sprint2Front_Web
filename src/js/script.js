@@ -33,6 +33,7 @@ botao.addEventListener('submit', function (event) {
     console.log("==============================");
     console.log(`👤 Nome Completo: ${nome} ${sobrenome}`);
     console.log(`📧 E-mail:        ${email}`);
+    
 });
 
 
