@@ -17,9 +17,9 @@
                 <ul class="menu-index">
                     <li><a href="#hero">Sobre</a></li>
                     <li><a href="#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="#como funciona">Como funciona</a></li>
+                    <li><a href="#como-funciona">Como funciona</a></li>
                     <li><a href="#contato">Contato</a></li>
-                    <li><a href="#cadastro">Cadastro</a></li>
+                    <li><a href="#login">Login</a></li>
                     <li><a href="pages/jovi.html" class="btn-testar">Quero testar</a></li>
                 </ul>
             </nav>
@@ -42,7 +42,7 @@
             </div>
             <div class="hero-foto">
                 <!-- Onde as partículas vão aparecer -->
-                <div id="particles-js"></div>
+                <div class="particles"></div>
 
 
 
@@ -54,7 +54,7 @@
 
         <section class="funcionalidades" id="funcionalidades">
 
-            <div id="particles-func"></div>
+            <div class="particles"></div>
 
 
             <h2>Funcionalidades</h2>
@@ -113,26 +113,39 @@
 
             </div>
         </section>
-        <section class="como-funciona" id="como funciona">
-            <div id="particles-como"></div>
+
+        <section class="como-funciona" id="como-funciona">
+            <div class="particles"></div>
             <h2>Como Funciona</h2>
             <p class="como-funciona-texto">Três passos. Zero complicação.</p>
-            <div class="passos">
-                <div class="passo">
-                    <span class="passo-num">01</span>
-                    <h3>Abra a câmera</h3>
-                    <p>Toque em "Smart Study" na barra de modos da câmera Jovi.</p>
+            <div class="slideshow-passos">
+
+                <button class="prev-passo">&#10094;</button>
+
+                <div class="passos">
+
+                    <div class="passo slide-passo ativo-passo">
+                        <span class="passo-num">01</span>
+                        <h3>Abra a câmera</h3>
+                        <p>Toque em "Smart Study" na barra de modos da câmera Jovi.</p>
+                    </div>
+
+                    <div class="passo slide-passo">
+                        <span class="passo-num">02</span>
+                        <h3>Escolha o modo</h3>
+                        <p>Selecione entre Digitalizar, Traduzir, Resumir, Quiz ou Resolver Math.</p>
+                    </div>
+
+                    <div class="passo slide-passo">
+                        <span class="passo-num">03</span>
+                        <h3>Aponte e capture</h3>
+                        <p>Posicione o texto na moldura e pressione o botão. A IA processa em segundos.</p>
+                    </div>
+
                 </div>
-                <div class="passo">
-                    <span class="passo-num">02</span>
-                    <h3>Escolha o modo</h3>
-                    <p>Selecione entre Digitalizar, Traduzir, Resumir, Quiz ou Resolver Math.</p>
-                </div>
-                <div class="passo">
-                    <span class="passo-num">03</span>
-                    <h3>Aponte e capture</h3>
-                    <p>Posicione o texto na moldura e pressione o botão. A IA processa em segundos.</p>
-                </div>
+
+                <button class="next-passo">&#10095;</button>
+
             </div>
         </section>
 
@@ -166,7 +179,7 @@
 
 
         <!-- Box de Cadastro -->
-        <section class="box-cadastro"  id="cadastro">
+        <section class="box-cadastro" id="login">
             <div class="cadastro-conteudo">
                 <h2> Seja o primeiro a experimentar</h2>
                 <p>Cadastre-se para receber notificações sobre o lançamento</p>
@@ -185,6 +198,10 @@
                         <div class="form-group">
                             <label for="email">E-mail:</label>
                             <input type="email" id="email" name="email" placeholder="seuemail@provedor.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="senha">Senha:</label>
+                            <input type="senha" id="senha" name="senha" placeholder="Digite sua senha de 6 digitos" required>
                         </div>
                     </div>
                     <!-- botao que envia o formulario -->
@@ -220,100 +237,9 @@
         <!-- Rodapé simples com ano e copyright -->
         <p class="copyright">© 2026 JOVI Smart Study. Todos os direitos reservados.</p>
     </footer>
-    <!-- Biblioteca oficial -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-
-    <script>
-        particlesJS("particles-js", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#2b68d1" }, /* Cor azul da IA */
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.5, "random": false },
-                "size": { "value": 4, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 100,
-                    "color": "#2b68d1",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" }, /* Conecta ao passar o mouse */
-                    "onclick": { "enable": true, "mode": "push" }
-                },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
-            },
-            "retina_detect": true
-        });
-    </script>
-    <script>
-        particlesJS("particles-func", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#2b68d1" }, /* Cor azul da IA */
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.1, "random": false },
-                "size": { "value": 4, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 10,
-                    "color": "#2b68d1",
-                    "opacity": 0.01,
-                    "width": 1
-                },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" }, /* Conecta ao passar o mouse */
-                    "onclick": { "enable": true, "mode": "push" }
-                },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
-            },
-            "retina_detect": true
-        });
-    </script>
-    <script>
-        particlesJS("particles-como", {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#2b68d1" }, /* Cor azul da IA */
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.1, "random": false },
-                "size": { "value": 4, "random": true },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 10,
-                    "color": "#2b68d1",
-                    "opacity": 0.01,
-                    "width": 1
-                },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": { "enable": true, "mode": "grab" }, /* Conecta ao passar o mouse */
-                    "onclick": { "enable": true, "mode": "push" }
-                },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } } }
-            },
-            "retina_detect": true
-        });
-    </script>
 
     <!-- importa o arquivo de java script, colocado no final do body -->
     <script src="src/js/script.js"></script>
-</body>
-
-</html>
-
 </body>
 
 </html>
