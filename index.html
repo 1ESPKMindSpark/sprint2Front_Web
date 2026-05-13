@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jovi smart study</title>
-    <!-- Linkando o arquivo CSS que a gente estilizou -->
     <link rel="stylesheet" href="src/css/index.css">
 </head>
 
@@ -20,6 +19,7 @@
                     <li><a href="#funcionalidades">Funcionalidades</a></li>
                     <li><a href="#como funciona">Como funciona</a></li>
                     <li><a href="#contato">Contato</a></li>
+                    <li><a href="#cadastro">Cadastro</a></li>
                     <li><a href="pages/jovi.html" class="btn-testar">Quero testar</a></li>
                 </ul>
             </nav>
@@ -144,7 +144,7 @@
                 <p>Estamos em constante evolução. O <strong>JOVI Smart Study</strong> é um projeto desenvolvido por
                     estudantes apaixonados por tecnologia e inovação acadêmica. Tem alguma sugestão, crítica ou gostaria
                     de colaborar? Nossa equipe de desenvolvedores está pronta para ouvir você.</p>
-                <button id="abrirdevs">contato</button>
+                <button id="abrirdevs">Contato</button>
             </div>
         </section>
 
@@ -163,7 +163,39 @@
                 </div>
             </div>
         </section>
+
+
+        <!-- Box de Cadastro -->
+        <section class="box-cadastro"  id="cadastro">
+            <div class="cadastro-conteudo">
+                <h2> Seja o primeiro a experimentar</h2>
+                <p>Cadastre-se para receber notificações sobre o lançamento</p>
+
+                <form id="cadastroForm">
+                    <div class="linha-form">
+                        <div class="form-group">
+                            <label for="nome">Nome:</label>
+                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="sobrenome">Sobrenome:</label>
+                            <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" placeholder="seuemail@provedor.com" required>
+                        </div>
+                    </div>
+                    <!-- botao que envia o formulario -->
+                    <button type="submit" class="btn-submit">Acesso antecipado</button>
+                </form>
+            </div>
+        </section>
+
+
     </main>
+
     <footer>
         <div class="footerconteudo">
             <div class="info">
@@ -247,7 +279,7 @@
             "retina_detect": true
         });
     </script>
-        <script>
+    <script>
         particlesJS("particles-como", {
             "particles": {
                 "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
@@ -276,11 +308,12 @@
         });
     </script>
 
+    <!-- importa o arquivo de java script, colocado no final do body -->
+    <script src="src/js/script.js"></script>
+</body>
 
+</html>
 
-
-    <!-- Importante: Chamando o script no final para garantir que o HTML carregue primeiro -->
-    <script src="./src/js/janelamodal.js"></script>
 </body>
 
 </html>
