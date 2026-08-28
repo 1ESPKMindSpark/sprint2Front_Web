@@ -1,0 +1,793 @@
+/* deixa as cores e font salvadas para facilitar na hora de pegar e nn precisar ficar copiando e colando*/
+:root {
+    /* Variáveis de cores para usar no projeto todo */
+    --black: #000000;
+    --body: #07070a;
+    --dark: #131313;
+    --grad-text: linear-gradient(90deg, #00bcd4, #2b68d1, #1a1a6e);
+    --retangulo-blue: #1d1dce;
+    --white: #ffffff;
+    --gray: #939393;
+    --azul: #2b68d1;
+    --cards:#21262d;
+
+    /* Tempo da animação de transição */
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --font: sans-serif;
+}
+
+/* Reset básico para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Configuração do topo do site */
+header {
+    position: fixed;
+    /* Fixa o menu no topo mesmo ao rolar */
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(9, 9, 14, 0.85);
+    backdrop-filter: blur(12px);
+    /* Efeito de desfoque no fundo */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    z-index: 100;
+    padding: 0 40px;
+    justify-content: space-between;
+}
+
+/* Container do conteúdo dentro do header */
+.conjunto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+}
+
+/* Estilo do texto da logo */
+.logo {
+    font-family: var(--font);
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--white);
+}
+
+/* Parte específica da logo com degradê */
+.logo span {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+/* Alinhamento dos itens do menu */
+.menu-index {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    align-items: center;
+
+}
+
+/* Links dentro do menu */
+.menu-index a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.2s;
+}
+
+.menu-index a:hover {
+    color: var(--white);
+}
+
+/* Botão de destaque do menu */
+.btn-testar {
+    display: inline-block;
+    background: var(--azul) !important;
+    color: var(--white) !important;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-weight: 500;
+}
+
+
+.brain-image {
+    width: 100%;
+    max-width: 500px;
+    /* Ajuste o tamanho aqui */
+    height: auto;
+    /* ANIMAÇÃO: Faz o cérebro flutuar suavemente */
+    animation: float 6s ease-in-out infinite;
+    /* EFEITO DE BRILHO EXTRA */
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.5));
+}
+
+/* Código da animação de flutuar */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* fundo de partículas */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* bolinhas */
+.particles span {
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: var(--azul);
+    border-radius: 50%;
+    opacity: 0.0001;
+    animation: floatUp 10s linear infinite;
+}
+
+/* animação */
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-10vh);
+        opacity: 0.4;
+    }
+}
+
+
+/* --- CONFIGURAÇÕES DO CORPO --- */
+body {
+    background-color: var(--body);
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* --- SEÇÃO HERO (O INÍCIO DO CONTEÚDO) --- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 40px;
+    min-height: 100vh;
+}
+
+/* Bloco de texto da seção hero */
+.hero-conteudo {
+    flex: 1;
+    max-width: 560px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Selo de "Novo" ou categoria */
+.hero-novo {
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero h2 {
+    text-align: left;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: var(--white);
+}
+
+.hero-testo {
+    font-size: 1.1rem;
+    color: var(--gray);
+    margin-bottom: 25px;
+}
+
+/* Bloco da imagem da seção hero */
+.hero-foto {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-foto img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(79, 142, 247, 0.2));
+}
+
+/* --- BOTÃO DE CHAMADA --- */
+.btn-aviso {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 15px 32px;
+    background-color: var(--azul) !important;
+    color: var(--white) !important;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-aviso:hover {
+    background-color: #204175 !important;
+    transform: translateY(-2px);
+}
+
+h2 {
+    color: var(--white);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* --- FUNCIONALIDADES --- */
+.funcionalidades {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Particles ficam atrás do conteúdo */
+    position: relative;
+    overflow: hidden;
+}
+
+/* deixa tudo na frente da animacao azul */
+.texto-funcionalidades,
+.cards {
+    position: relative;
+    z-index: 1;
+}
+
+.texto-funcionalidades {
+    font-size: 1.15rem;
+    color: var(--gray);
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+}
+
+/* Grid para os cards de funcionalidade */
+.cards {
+    display: flex;
+    gap: 20px;
+
+}
+
+.card {
+    background: var(--cards);
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+}
+
+.card:hover {
+    border-color: var(--azul);
+    transform: translateY(-3px);
+}
+
+.card-cabecalho {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.icon {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+}
+
+.card h3 {
+    color: var(--azul);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+
+.card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+
+
+/* --- como funciona com slidehow --- */
+.como-funciona {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 100px 40px;
+    max-width: 1100px;
+    margin: 0 auto;
+    /* Particles ficam atrás do conteúdo */
+    position: relative;
+    overflow: hidden;
+}
+
+/* deixa tudo na frente da animacao azul */
+.como-funciona-texto,
+.slideshow-passos,
+.prev-passo,
+.next-passo {
+    position: relative;
+    z-index: 1;
+}
+
+.como-funciona-texto {
+    font-size: 1.15rem;
+    color: var(--gray);
+    text-align: center;
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 48px;
+}
+.slideshow-passos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+.passos {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+.slide-passo {
+    display: none;
+    background: var(--cards);
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #30363d;
+    
+}
+.slide-passo.ativo-passo {
+    display: block;
+}
+.slide-passo:hover {
+    border-color: var(--azul);
+    transform: translateY(-3px);
+}
+
+.passo-num {
+    font-size: 42px;
+    font-weight: 800;
+    background: var(--azul);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    margin-bottom: 14px;
+    line-height: 1;
+}
+
+.slide-passo h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--white);
+}
+
+.slide-passo p {
+    font-size: 13px;
+    color: var(--gray);
+}
+.prev-passo,
+.next-passo {
+    background: var(--azul);
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.prev-passo:hover,
+.next-passo:hover {
+    background: #204175;
+}
+
+
+/* --- CONTATO --- */
+#contato {
+    padding: 70px 20px;
+    text-align: center;
+    background: #264e94;
+    border-top: 1px solid #30363d;
+}
+
+#contato h2 {
+    color: #0d1117;
+}
+
+#contato p {
+    color: #0d1117;
+    max-width: 600px;
+    margin: 0 auto 28px;
+}
+
+/* Botão que abre a lista de desenvolvedores */
+#abrirdevs {
+    padding: 12px 36px;
+    border-radius: 50px;
+    border: none;
+    background: #0d1117;
+    color: var(--azul);
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+#abrirdevs:hover {
+    opacity: 0.85;
+}
+
+/* --- OVERLAY E MODAL --- */
+.janela-modal {
+    display: none;
+    /* Escondido até o JS ser acionado */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Caixa branca/escura interna do modal */
+.conteudo-modal {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.conteudo-modal h2 {
+    color: var(--white);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.lista-devs p {
+    color: var(--gray);
+    padding: 10px 0;
+    font-size: 0.9rem;
+}
+
+/* Botão de fechar do modal */
+.btn-fechar {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--gray);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* Classe controlada pelo JavaScript para mostrar o modal */
+.janela-modal.visivel {
+    display: flex;
+}
+
+/* --- FOOTER --- */
+footer {
+    background: #010409;
+    color: var(--white);
+    padding: 50px 20px 20px;
+    border-top: 1px solid #30363d;
+}
+
+/* Alinhamento dos blocos de informação no rodapé */
+.footerconteudo {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
+.info h3 {
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.info h3 span {
+    color: var(--azul);
+}
+
+.info p {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+.footer-links h4,
+.redes h4 {
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+}
+
+.footer-links a {
+    color: var(--gray);
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+    color: var(--azul);
+}
+
+.redes span {
+    color: var(--gray);
+    font-size: 0.85rem;
+}
+
+/* Linha de direitos autorais no final de tudo */
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #30363d;
+    padding-top: 20px;
+    font-size: 0.78rem;
+    color: var(--gray);
+}
+
+/* Links das redes sociais no rodapé */
+.redes a {
+    text-decoration: none;
+    color: var(--gray);
+    transition: 0.3s;
+}
+
+/* Efeito de destaque nas redes sociais */
+.redes a:hover {
+    color: var(--azul) !important;
+}
+
+.redes a:hover span {
+    color: var(--azul);
+}
+
+
+.box-cadastro {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+    color: var(--white);
+    margin-right: 20%;
+}
+
+.cadastro-conteudo {
+    max-width: 560px;
+    width: 100%;
+}
+
+.cadastro-conteudo h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.cadastro-conteudo p {
+    font-size: 0.95rem;
+    color: var(--gray);
+    margin-bottom: 40px;
+}
+
+.linha-form {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.linha-form .form-group {
+    flex: 1;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--white);
+    margin-bottom: 8px;
+}
+
+.form-group input {
+    background-color: #1a1a1a;
+    border: 1px solid #2e2e2e;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-group input::placeholder {
+    color: #555555;
+}
+
+.btn-submit {
+    background: var(--grad-text);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+/* responsividade */
+@media (max-width: 768px) {
+
+    header {
+        padding: 10px 20px;
+    }
+
+    .conjunto-header {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+        padding: 10px 0;
+    }
+
+    .menu-index {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .menu-index a {
+        font-size: 16px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 140px 20px 80px;
+        gap: 40px;
+    }
+
+    .hero-conteudo {
+        align-items: center;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .hero-testo {
+        font-size: 1rem;
+    }
+
+    .brain-image {
+        max-width: 300px;
+    }
+
+    .cards {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .slideshow-passos {
+        flex-direction: column;
+    }
+
+    .passos {
+        max-width: 100%;
+    }
+
+    .prev-passo,
+    .next-passo {
+        padding: 10px 14px;
+        font-size: 16px;
+    }
+
+    .footerconteudo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .linha-form {
+        flex-direction: column;
+    }
+
+    .box-cadastro {
+        margin-right: 0;
+        padding: 60px 20px;
+    }
+
+    .cadastro-conteudo h2 {
+        font-size: 2rem;
+    }
+
+    #contato p,
+    .texto-funcionalidades,
+    .como-funciona-texto {
+        font-size: 1rem;
+    }
+}
+.hero-foto {
+    position: relative;
+    overflow: hidden;
+}
+
+button {
+    font-family: inherit;
+}
