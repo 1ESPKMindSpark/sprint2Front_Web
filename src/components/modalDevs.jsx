@@ -14,7 +14,7 @@ function ModalDevs({ aberto, fecharModal }) {
     { nome: "Ana Giazzi", email: "anagazzio@smartStudy.com", rm: "569846" },
     { nome: "Erick", email: "erick@smartStudy.com", rm: "574064" },
     { nome: "Giulia Stella", email: "giuliastella@smartStudy.com", rm: "568888" },
-    { nome: "Julia Lopes", email: "juliacamelo@smartStudy.com", rm: "574139" },
+    { nome: "Lucas Octaviano —  RM: 573368", email: "lucasoctaviano@smartStudy.com", rm: "573368" },
     { nome: "Rafael", email: "rafael@smartStudy.com", rm: "570738" },
   ]
 
