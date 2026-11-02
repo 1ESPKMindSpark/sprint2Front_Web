@@ -1,3 +1,4 @@
+
 import { useState } from "react"
 
 function Cadastro() {
@@ -10,7 +11,7 @@ function Cadastro() {
   function cadastrar(event) {
     event.preventDefault()
 
-    if (!nome || !sobrenome || !email || !senha) {
+    if (!nome.trim() || !sobrenome.trim() || !email.trim() || !senha) {
       setMensagem("Preencha todos os campos do formulário!")
       return
     }
@@ -42,18 +43,30 @@ function Cadastro() {
   }
 
   return (
-    <section className="box-cadastro" id="login">
-      <div className="cadastro-conteudo">
-        <h2>Seja o primeiro a experimentar</h2>
+    <section
+      id="login"
+      className="w-full bg-[#08060d] px-5 py-16 sm:px-8 md:py-20"
+    >
+      <div className="mx-auto w-full max-w-3xl">
+        <div className="mb-10 text-center">
+          <h2 className="mb-4 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
+            Seja o primeiro a experimentar
+          </h2>
 
-        <p>
-          Cadastre-se para receber notificações sobre o lançamento
-        </p>
+          <p className="text-sm text-gray-300 sm:text-base">
+            Cadastre-se para receber notificações sobre o lançamento
+          </p>
+        </div>
 
-        <form onSubmit={cadastrar}>
-          <div className="linha-form">
-            <div className="form-group">
-              <label htmlFor="nome">Nome:</label>
+        <form
+          onSubmit={cadastrar}
+          className="space-y-5 rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xl sm:p-8"
+        >
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div className="flex flex-col gap-2">
+              <label htmlFor="nome" className="text-sm font-medium text-white">
+                Nome:
+              </label>
 
               <input
                 type="text"
@@ -61,11 +74,18 @@ function Cadastro() {
                 placeholder="Digite seu nome"
                 value={nome}
                 onChange={(event) => setNome(event.target.value)}
+                className="w-full rounded-lg border border-gray-600 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30"
+                required
               />
             </div>
 
-            <div className="form-group">
-              <label htmlFor="sobrenome">Sobrenome:</label>
+            <div className="flex flex-col gap-2">
+              <label
+                htmlFor="sobrenome"
+                className="text-sm font-medium text-white"
+              >
+                Sobrenome:
+              </label>
 
               <input
                 type="text"
@@ -73,12 +93,16 @@ function Cadastro() {
                 placeholder="Digite seu sobrenome"
                 value={sobrenome}
                 onChange={(event) => setSobrenome(event.target.value)}
+                className="w-full rounded-lg border border-gray-600 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30"
+                required
               />
             </div>
           </div>
 
-          <div className="form-group">
-            <label htmlFor="email">E-mail:</label>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="email" className="text-sm font-medium text-white">
+              E-mail:
+            </label>
 
             <input
               type="email"
@@ -86,31 +110,40 @@ function Cadastro() {
               placeholder="seuemail@provedor.com"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
+              className="w-full rounded-lg border border-gray-600 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30"
+              required
             />
           </div>
 
-          <div className="form-group">
-            <label htmlFor="senha">Senha:</label>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="senha" className="text-sm font-medium text-white">
+              Senha:
+            </label>
 
             <input
               type="password"
               id="senha"
-              placeholder="Digite sua senha de 6 dígitos"
+              placeholder="Digite sua senha de 6 caracteres"
               value={senha}
               onChange={(event) => setSenha(event.target.value)}
+              className="w-full rounded-lg border border-gray-600 bg-white px-4 py-3 text-gray-900 outline-none transition focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30"
+              minLength={6}
+              required
             />
           </div>
 
-          <button type="submit" className="btn-submit">
+          <button
+            type="submit"
+            className="w-full rounded-lg bg-purple-600 px-6 py-3 font-semibold text-white transition hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-[#08060d] sm:w-auto"
+          >
             Acesso antecipado
           </button>
 
           {mensagem && (
             <p
-              style={{
-                marginTop: "15px",
-                color: "white",
-              }}
+              role="status"
+              aria-live="polite"
+              className="mt-4 text-sm text-white"
             >
               {mensagem}
             </p>

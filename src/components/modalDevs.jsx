@@ -1,3 +1,4 @@
+
 function ModalDevs({ aberto, fecharModal }) {
   if (!aberto) {
     return null
@@ -9,28 +10,58 @@ function ModalDevs({ aberto, fecharModal }) {
     }
   }
 
+  const desenvolvedores = [
+    { nome: "Ana Giazzi", email: "anagazzio@smartStudy.com", rm: "569846" },
+    { nome: "Erick", email: "erick@smartStudy.com", rm: "574064" },
+    { nome: "Giulia Stella", email: "giuliastella@smartStudy.com", rm: "568888" },
+    { nome: "Julia Lopes", email: "juliacamelo@smartStudy.com", rm: "574139" },
+    { nome: "Rafael", email: "rafael@smartStudy.com", rm: "570738" },
+  ]
+
   return (
     <section
-      className="janela-modal visivel"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/70 px-4 py-8 backdrop-blur-sm"
       onClick={fecharAoClicarFora}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="titulo-modal"
     >
-      <div className="conteudo-modal">
+      <div className="relative w-full max-w-lg rounded-2xl border border-purple-500/30 bg-[#100c19] p-6 text-white shadow-2xl shadow-purple-950/40 sm:p-8">
         <button
-          className="btn-fechar"
+          type="button"
+          className="absolute right-4 top-3 flex h-9 w-9 items-center justify-center rounded-full text-3xl text-gray-400 transition hover:bg-white/10 hover:text-white"
           onClick={fecharModal}
           aria-label="Fechar modal"
         >
           ×
         </button>
 
-        <h2>Desenvolvedores</h2>
+        <h2
+          id="titulo-modal"
+          className="mb-7 pr-10 text-2xl font-bold sm:text-3xl"
+        >
+          Desenvolvedores
+        </h2>
 
-        <div className="lista-devs">
-          <p>Ana Giazzi | anagazzio@smartStudy.com | RM: 569846</p>
-          <p>Erick | erick@smartStudy.com | RM: 574064</p>
-          <p>Giulia Stella | giuliastella@smartStudy.com | RM: 568888</p>
-          <p>Julia Lopes | juliacamelo@smartStudy.com | RM: 574139</p>
-          <p>Rafael | rafael@smartStudy.com | RM: 570738</p>
+        <div className="flex flex-col gap-3">
+          {desenvolvedores.map((dev) => (
+            <div
+              key={dev.rm}
+              className="rounded-xl border border-white/10 bg-white/5 p-4 transition hover:border-purple-400/40"
+            >
+              <p className="font-semibold text-purple-300">
+                {dev.nome}
+              </p>
+
+              <p className="mt-1 break-all text-sm text-gray-300">
+                {dev.email}
+              </p>
+
+              <p className="mt-1 text-xs text-gray-400">
+                RM: {dev.rm}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

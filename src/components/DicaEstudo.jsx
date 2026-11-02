@@ -21,6 +21,7 @@ function DicaEstudo() {
       setFrase(dados)
     } catch {
       setErro(true)
+      setFrase(null)
     } finally {
       setCarregando(false)
     }
@@ -31,31 +32,44 @@ function DicaEstudo() {
   }, [])
 
   return (
-    <section className="mt-8 rounded-2xl bg-purple-50 p-6">
-      <h2 className="mb-4 text-xl font-bold text-purple-800">
+    <section className="mt-8 w-full rounded-2xl border border-purple-200 bg-purple-50 p-5 shadow-sm sm:p-6">
+      <h2 className="mb-4 text-xl font-bold text-purple-800 sm:text-2xl">
         Inspiração para estudar
       </h2>
 
-      {carregando && <p>Carregando inspiração...</p>}
+      {carregando && (
+        <p className="text-sm text-gray-600" role="status">
+          Carregando inspiração...
+        </p>
+      )}
 
       {erro && (
-        <p>Não foi possível carregar a frase. Tente novamente.</p>
+        <div>
+          <p className="text-sm text-red-700" role="alert">
+            Não foi possível carregar a frase. Tente novamente.
+          </p>
+        </div>
       )}
 
       {frase && !carregando && (
-        <>
-          <p className="text-gray-700">"{frase.quote}"</p>
+        <div aria-live="polite">
+          <p className="break-words text-base leading-relaxed text-gray-700 sm:text-lg">
+            "{frase.quote}"
+          </p>
+
           <p className="mt-3 font-semibold text-purple-700">
             — {frase.author}
           </p>
-        </>
+        </div>
       )}
 
       <button
+        type="button"
         onClick={buscarFrase}
-        className="mt-5 rounded-lg bg-purple-700 px-5 py-2 text-white hover:bg-purple-800"
+        disabled={carregando}
+        className="mt-5 w-full rounded-lg bg-purple-700 px-5 py-3 font-semibold text-white transition hover:bg-purple-800 disabled:cursor-not-allowed disabled:opacity-50 sm:w-auto"
       >
-        Nova inspiração
+        {carregando ? "Carregando..." : "Nova inspiração"}
       </button>
     </section>
   )

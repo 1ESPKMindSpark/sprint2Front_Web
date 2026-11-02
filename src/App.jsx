@@ -20,8 +20,17 @@ import "./App.css"
 function App() {
   const [modalAberto, setModalAberto] = useState(false)
 
+  function abrirModal() {
+    setModalAberto(true)
+  }
+
+  function fecharModal() {
+    setModalAberto(false)
+  }
+
   return (
     <Routes>
+      {/* Rota pública: Landing Page */}
       <Route
         path="/"
         element={
@@ -33,11 +42,11 @@ function App() {
               <Funcionalidades />
               <ComoFunciona />
 
-              <Contato abrirModal={() => setModalAberto(true)} />
+              <Contato abrirModal={abrirModal} />
 
               <ModalDevs
                 aberto={modalAberto}
-                fecharModal={() => setModalAberto(false)}
+                fecharModal={fecharModal}
               />
 
               <Cadastro />
@@ -48,8 +57,10 @@ function App() {
         }
       />
 
+      {/* Rota pública: Login */}
       <Route path="/login" element={<Login />} />
 
+      {/* Rota privada: Painel do estudante */}
       <Route element={<RotaPrivada />}>
         <Route path="/painel" element={<Painel />} />
       </Route>
