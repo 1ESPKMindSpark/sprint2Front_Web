@@ -34,9 +34,9 @@ O JOVI é uma plataforma desenvolvida para apoiar a organização e a jornada de
 - npm
 - Git
 Clonar o repositório:
-git clone https://github.com/1ESPKMindSpark/sprint2Front_Web.git
+git clone [https://github.com/GiuliaStella/sprint4Front_Web](https://github.com/GiuliaStella/sprint4Front_Web)
 Acessar a pasta:
-cd sprint2Front_Web
+cd sprint4Front_Web
 Instalar as dependências:
 npm install
 Executar o projeto:
